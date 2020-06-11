@@ -23,7 +23,14 @@ class _NoteListState extends State<NoteList> {
         child: ListView.builder(
           itemBuilder: (BuildContext context, int index) {
             return Card(
-              child: ListTile(),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: Colors.yellow,
+                  child: Icon(
+                    Icons.arrow_right,
+                  ),
+                ),
+              ),
               color: Colors.white,
               elevation: 2.0,
             );
