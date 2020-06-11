@@ -18,6 +18,13 @@ class _NoteListState extends State<NoteList> {
       appBar: AppBar(
         title: Text('Notes'),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('Floating action button clicked');
+        },
+        tooltip: 'Add note',
+        child: Icon(Icons.add),
+      ),
       body: Container(
         margin: EdgeInsets.only(
             left: _minimumPadding * 2, right: _minimumPadding * 2),
