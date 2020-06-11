@@ -9,13 +9,17 @@ class NoteList extends StatefulWidget {
 }
 
 class _NoteListState extends State<NoteList> {
+  double _minimumPadding = 5.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Notes'),
       ),
-      body: Container(),
+      body: Container(
+        margin: EdgeInsets.all(_minimumPadding * 2),
+      ),
     );
   }
 }
