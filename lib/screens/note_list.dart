@@ -30,6 +30,16 @@ class _NoteListState extends State<NoteList> {
                     Icons.arrow_right,
                   ),
                 ),
+                title: Text(
+                  'This is title ${dummyNumbers[index]}',
+                ),
+                subtitle: Text(
+                  'This is subtitle ${dummyNumbers[index]}',
+                ),
+                trailing: Icon(
+                  Icons.delete,
+                  color: Colors.grey,
+                ),
               ),
               color: Colors.white,
               elevation: 2.0,
