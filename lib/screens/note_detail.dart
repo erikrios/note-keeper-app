@@ -15,6 +15,9 @@ class _NoteDetailState extends State<NoteDetail> {
   ];
   String _priorityValue;
 
+  TextEditingController titleController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -54,6 +57,26 @@ class _NoteDetailState extends State<NoteDetail> {
                 },
                 style: textStyle,
                 value: _priorityValue,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: _minimumPadding * 3,
+                bottom: _minimumPadding * 3,
+              ),
+              child: TextField(
+                controller: titleController,
+                style: textStyle,
+                decoration: InputDecoration(
+                  labelText: 'Title',
+                  labelStyle: textStyle,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onChanged: (String value) {
+                  debugPrint('Something changed in Title Text Field');
+                },
               ),
             )
           ],
