@@ -8,8 +8,22 @@ class NoteDetail extends StatefulWidget {
 }
 
 class _NoteDetailState extends State<NoteDetail> {
+  final double _minimumPadding = 5.0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Edit Note',
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(
+          left: _minimumPadding * 2,
+          top: _minimumPadding * 3,
+          right: _minimumPadding * 2,
+        ),
+      ),
+    );
   }
 }

@@ -8,7 +8,7 @@ class NoteList extends StatefulWidget {
 }
 
 class _NoteListState extends State<NoteList> {
-  double _minimumPadding = 5.0;
+  final double _minimumPadding = 5.0;
   List<int> dummyNumbers = List<int>.generate(100, (index) => index++);
 
   @override
