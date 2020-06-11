@@ -40,6 +40,9 @@ class _NoteListState extends State<NoteList> {
                   Icons.delete,
                   color: Colors.grey,
                 ),
+                onTap: () {
+                  print('${dummyNumbers[index]} tapped');
+                },
               ),
               color: Colors.white,
               elevation: 2.0,
