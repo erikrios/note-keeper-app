@@ -22,6 +22,8 @@ class _NoteListState extends State<NoteList> {
         margin: EdgeInsets.only(
             left: _minimumPadding * 2, right: _minimumPadding * 2),
         child: ListView.builder(
+          padding: EdgeInsets.only(
+              top: _minimumPadding * 2, bottom: _minimumPadding * 2),
           itemBuilder: (BuildContext context, int index) {
             return Card(
               child: ListTile(
