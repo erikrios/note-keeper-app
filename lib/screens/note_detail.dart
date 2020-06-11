@@ -23,6 +23,11 @@ class _NoteDetailState extends State<NoteDetail> {
           top: _minimumPadding * 3,
           right: _minimumPadding * 2,
         ),
+        child: ListView(
+          children: [
+            
+          ],
+        ),
       ),
     );
   }
