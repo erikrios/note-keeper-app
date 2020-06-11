@@ -78,6 +78,69 @@ class _NoteDetailState extends State<NoteDetail> {
                   debugPrint('Something changed in Title Text Field');
                 },
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: _minimumPadding * 3,
+                bottom: _minimumPadding * 3,
+              ),
+              child: TextField(
+                controller: descriptionController,
+                style: textStyle,
+                decoration: InputDecoration(
+                  labelText: 'Description',
+                  labelStyle: textStyle,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onChanged: (String value) {
+                  debugPrint('Something changed in Description Text Field');
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: _minimumPadding * 3,
+                bottom: _minimumPadding * 3,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColorDark,
+                      textColor: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        'Save',
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          debugPrint('Save state button clicked');
+                        });
+                      },
+                    ),
+                  ),
+                  Container(
+                    width: 5.0,
+                  ),
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColorDark,
+                      textColor: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        'Delete',
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          debugPrint('Delete state button clicked');
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
