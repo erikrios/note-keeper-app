@@ -19,6 +19,9 @@ class _NoteListState extends State<NoteList> {
       ),
       body: Container(
         margin: EdgeInsets.all(_minimumPadding * 2),
+        child: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {},
+        ),
       ),
     );
   }
