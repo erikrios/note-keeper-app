@@ -10,6 +10,7 @@ class NoteList extends StatefulWidget {
 
 class _NoteListState extends State<NoteList> {
   double _minimumPadding = 5.0;
+  List<int> dummyNumbers = List<int>.generate(100, (index) => index++);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,14 @@ class _NoteListState extends State<NoteList> {
       body: Container(
         margin: EdgeInsets.all(_minimumPadding * 2),
         child: ListView.builder(
-          itemBuilder: (BuildContext context, int index) {},
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              child: ListTile(),
+              color: Colors.white,
+              elevation: 2.0,
+            );
+          },
+          itemCount: dummyNumbers.length,
         ),
       ),
     );
