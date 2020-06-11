@@ -9,8 +9,21 @@ class NoteDetail extends StatefulWidget {
 
 class _NoteDetailState extends State<NoteDetail> {
   final double _minimumPadding = 5.0;
+  static final List<String> _priorities = [
+    'High',
+    'Low',
+  ];
+  String _priorityValue;
+
+  @override
+  void initState() {
+    super.initState();
+    _priorityValue = _priorities[1];
+  }
+
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.headline6;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -25,7 +38,24 @@ class _NoteDetailState extends State<NoteDetail> {
         ),
         child: ListView(
           children: [
-            
+            ListTile(
+              title: DropdownButton(
+                items: _priorities.map((String priority) {
+                  return DropdownMenuItem<String>(
+                    child: Text(priority),
+                    value: priority,
+                  );
+                }).toList(),
+                onChanged: (String newValue) {
+                  setState(() {
+                    _priorityValue = newValue;
+                  });
+                  debugPrint('User selected $_priorityValue');
+                },
+                style: textStyle,
+                value: _priorityValue,
+              ),
+            )
           ],
         ),
       ),
