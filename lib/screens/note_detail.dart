@@ -40,6 +40,7 @@ class _NoteDetailState extends State<NoteDetail> {
         title: Text(
           _appBarTitle,
         ),
+        leading: Icon(Icons.arrow_back),
       ),
       body: Padding(
         padding: EdgeInsets.only(
