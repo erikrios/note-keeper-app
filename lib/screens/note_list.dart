@@ -53,6 +53,7 @@ class _NoteListState extends State<NoteList> {
                 ),
                 onTap: () {
                   print('${dummyNumbers[index]} tapped');
+                  _navigateToDetail();
                 },
               ),
               color: Colors.white,
