@@ -141,7 +141,7 @@ class _NoteDetailState extends State<NoteDetail> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
