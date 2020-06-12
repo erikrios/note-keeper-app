@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NoteDetail extends StatefulWidget {
-  String _appBarTitle;
+  final String _appBarTitle;
 
   NoteDetail(this._appBarTitle);
 
