@@ -12,7 +12,7 @@ class NoteDetail extends StatefulWidget {
 }
 
 class _NoteDetailState extends State<NoteDetail> {
-  String _appBarTitle;
+  final String _appBarTitle;
 
   _NoteDetailState(this._appBarTitle);
 
