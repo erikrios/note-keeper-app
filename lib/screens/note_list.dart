@@ -21,7 +21,7 @@ class _NoteListState extends State<NoteList> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('Floating action button clicked');
-          _navigateToDetail();
+          _navigateToDetail('Add Note');
         },
         tooltip: 'Add note',
         child: Icon(Icons.add),
@@ -53,7 +53,7 @@ class _NoteListState extends State<NoteList> {
                 ),
                 onTap: () {
                   print('${dummyNumbers[index]} tapped');
-                  _navigateToDetail();
+                  _navigateToDetail('Edit Note');
                 },
               ),
               color: Colors.white,
@@ -66,12 +66,12 @@ class _NoteListState extends State<NoteList> {
     );
   }
 
-  void _navigateToDetail() {
+  void _navigateToDetail(String title) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (BuildContext context) {
-          return NoteDetail();
+          return NoteDetail(title);
         },
       ),
     );
