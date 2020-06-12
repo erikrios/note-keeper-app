@@ -40,7 +40,14 @@ class _NoteDetailState extends State<NoteDetail> {
         title: Text(
           _appBarTitle,
         ),
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () {
+            _navigateToList();
+          },
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.only(
@@ -155,5 +162,9 @@ class _NoteDetailState extends State<NoteDetail> {
         ),
       ),
     );
+  }
+
+  void _navigateToList() {
+    Navigator.pop(context);
   }
 }
