@@ -19,4 +19,26 @@ class Note {
   String get date => _date;
 
   int get priority => _priority;
+
+  set title(String newTitle) {
+    if (newTitle.length <= 255) {
+      this._title = newTitle;
+    }
+  }
+
+  set description(String newDescription) {
+    if (newDescription.length <= 255) {
+      this._description = newDescription;
+    }
+  }
+
+  set priority(int newPriority) {
+    if (newPriority >= 1 && newPriority <= 2) {
+      this._priority = newPriority;
+    }
+  }
+
+  set date(String newDate) {
+    this._date = newDate;
+  }
 }
