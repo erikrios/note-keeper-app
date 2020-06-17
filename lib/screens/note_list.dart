@@ -16,6 +16,8 @@ class _NoteListState extends State<NoteList> {
   List<Note> noteList;
   int count = 0;
 
+  final double _minimumPadding = 5.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
