@@ -107,4 +107,12 @@ class _NoteListState extends State<NoteList> {
         return Icon(Icons.keyboard_arrow_right);
     }
   }
+
+  void _delete(BuildContext context, Note note) async {
+    int result = await databaseHelper.deleteNote(note.id);
+    if (result != 0) {
+      // _showSnackBar(context, 'Note Deleted Successfully');
+      // updateListView();
+    }
+  }
 }
