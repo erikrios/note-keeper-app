@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_keeper_app/models/note.dart';
 import 'package:note_keeper_app/screens/note_detail.dart';
 import 'package:note_keeper_app/utils/database_helper.dart';
+import 'package:sqflite/sqflite.dart';
 
 class NoteList extends StatefulWidget {
   @override
@@ -119,5 +120,18 @@ class _NoteListState extends State<NoteList> {
   void _showSnackBar(BuildContext context, String message) {
     final snackbar = SnackBar(content: Text(message));
     Scaffold.of(context).showSnackBar(snackbar);
+  }
+
+  void updateListView() {
+    final Future<Database> dbFuture = databaseHelper.initializeDatabase();
+    dbFuture.then((database) {
+      Future<List<Note>> noteListFuture = databaseHelper.getNoteList();
+      noteListFuture.then((noteList) {
+        setState(() {
+          this.noteList = noteList;
+          this.count = noteList.length;
+        });
+      });
+    });
   }
 }
