@@ -101,7 +101,7 @@ class _NoteDetailState extends State<NoteDetail> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
-                      errorStyle: TextStyle(color: Colors.yellowAccent),
+                      errorStyle: TextStyle(color: Colors.red),
                     ),
                     onChanged: (String value) {
                       debugPrint('Something changed in Title Text Field');
@@ -126,7 +126,7 @@ class _NoteDetailState extends State<NoteDetail> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
-                      errorStyle: TextStyle(color: Colors.yellowAccent),
+                      errorStyle: TextStyle(color: Colors.red),
                     ),
                     onChanged: (String value) {
                       debugPrint('Something changed in Description Text Field');
