@@ -47,23 +47,27 @@ class _NoteListState extends State<NoteList> {
             return Card(
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: Colors.yellow,
-                  child: Icon(
-                    Icons.arrow_right,
-                  ),
+                  backgroundColor: getPriorityColor(noteList[index].priority),
+                  child: getPriorityIcon(noteList[index].priority),
                 ),
                 title: Text(
-                  'This is title ${dummyNumbers[index]}',
+                  noteList[index].title,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
                 subtitle: Text(
-                  'This is subtitle ${dummyNumbers[index]}',
+                  noteList[index].date,
                 ),
-                trailing: Icon(
-                  Icons.delete,
-                  color: Colors.grey,
+                trailing: GestureDetector(
+                  child: Icon(
+                    Icons.delete,
+                    color: Colors.grey,
+                  ),
+                  onTap: () {
+                    _delete(context, noteList[index]);
+                  },
                 ),
                 onTap: () {
-                  print('${dummyNumbers[index]} tapped');
+                  print('List Tile tapped');
                   _navigateToDetail('Edit Note');
                 },
               ),
@@ -71,7 +75,7 @@ class _NoteListState extends State<NoteList> {
               elevation: 2.0,
             );
           },
-          itemCount: dummyNumbers.length,
+          itemCount: count,
         ),
       ),
     );
