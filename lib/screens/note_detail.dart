@@ -83,12 +83,12 @@ class _NoteDetailState extends State<NoteDetail> {
                   }).toList(),
                   onChanged: (String newValue) {
                     setState(() {
-                      _priorityValue = newValue;
+                      debugPrint('User selected $newValue');
+                      updatePriorityAsInt(newValue);
                     });
-                    debugPrint('User selected $_priorityValue');
                   },
                   style: textStyle,
-                  value: _priorityValue,
+                  value: getPriorityAsString(note.priority),
                 ),
               ),
               Padding(
