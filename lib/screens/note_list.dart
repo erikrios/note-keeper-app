@@ -32,7 +32,7 @@ class _NoteListState extends State<NoteList> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('Floating action button clicked');
-          _navigateToDetail('Add Note');
+          _navigateToDetail(Note('', '', 2), 'Add Note');
         },
         tooltip: 'Add note',
         child: Icon(Icons.add),
@@ -68,7 +68,7 @@ class _NoteListState extends State<NoteList> {
                 ),
                 onTap: () {
                   print('List Tile tapped');
-                  _navigateToDetail('Edit Note');
+                  _navigateToDetail(noteList[index], 'Edit Note');
                 },
               ),
               color: Colors.white,
@@ -81,15 +81,16 @@ class _NoteListState extends State<NoteList> {
     );
   }
 
-  void _navigateToDetail(String title) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (BuildContext context) {
-          return NoteDetail(title);
-        },
-      ),
-    );
+  void _navigateToDetail(Note note, String title) async {
+    bool result = await Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return NoteDetail(note, title);
+      },
+    ));
+
+    if (result == true) {
+      updateListView();
+    }
   }
 
   // Returns the priority color
