@@ -79,4 +79,18 @@ class _NoteListState extends State<NoteList> {
       ),
     );
   }
+
+  // Returns the priority color
+  Color getPriorityColor(int priority) {
+    switch (priority) {
+      case 1:
+        return Colors.red;
+        break;
+      case 2:
+        return Colors.yellow;
+        break;
+      default:
+        return Colors.yellow;
+    }
+  }
 }
