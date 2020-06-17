@@ -129,6 +129,7 @@ class _NoteDetailState extends State<NoteDetail> {
                   ),
                   onChanged: (String value) {
                     debugPrint('Something changed in Description Text Field');
+                    updateDescription();
                   },
                 ),
               ),
