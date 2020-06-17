@@ -24,6 +24,7 @@ class _NoteListState extends State<NoteList> {
       noteList = List<Note>();
       updateListView();
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Notes'),
