@@ -170,6 +170,7 @@ class _NoteDetailState extends State<NoteDetail> {
                         onPressed: () {
                           setState(() {
                             debugPrint('Delete state button clicked');
+                            _delete();
                           });
                         },
                       ),
