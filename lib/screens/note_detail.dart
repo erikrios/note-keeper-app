@@ -232,11 +232,29 @@ class _NoteDetailState extends State<NoteDetail> {
 
     if (result != 0) {
       // Success
-      // _showAlertDialog('Status', 'Note Saved Successfully');
+      _showAlertDialog('Status', 'Note Saved Successfully');
     } else {
       // Failure
-      // _showAlertDialog('Status', 'Note Saved Successfully');
+      _showAlertDialog('Status', 'Note Saved Successfully');
+    }
+  }
 
+  void _delete() async {
+    _navigateToList();
+
+    // Case 1: If user is trying to delete the NEW NOTE i.e. he has come to
+    // the detail page by pressing the FAB of NoteList page.
+    if (note.id == null) {
+      _showAlertDialog('Status', 'No Note was deleted');
+      return;
+    }
+
+    // Case 2: User is trying to delete the old note that already has a valid ID.
+    int result = await helper.deleteNote(note.id);
+    if (result != 0) {
+      _showAlertDialog('Status', 'Note Deleted Successfully');
+    } else {
+      _showAlertDialog('Status', 'Error Occured while Deleting Note');
     }
   }
 
