@@ -29,16 +29,8 @@ class _NoteDetailState extends State<NoteDetail> {
 
   DatabaseHelper helper = DatabaseHelper();
 
-  String _priorityValue;
-
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    _priorityValue = _priorities[1];
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +178,7 @@ class _NoteDetailState extends State<NoteDetail> {
   }
 
   void _navigateToList() {
-    Navigator.pop(context);
+    Navigator.pop(context, true);
   }
 
   // Convert the String priority in the form of integer before saving it to Database
