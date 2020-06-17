@@ -111,8 +111,13 @@ class _NoteListState extends State<NoteList> {
   void _delete(BuildContext context, Note note) async {
     int result = await databaseHelper.deleteNote(note.id);
     if (result != 0) {
-      // _showSnackBar(context, 'Note Deleted Successfully');
+      _showSnackBar(context, 'Note Deleted Successfully');
       // updateListView();
     }
+  }
+
+  void _showSnackBar(BuildContext context, String message) {
+    final snackbar = SnackBar(content: Text(message));
+    Scaffold.of(context).showSnackBar(snackbar);
   }
 }
