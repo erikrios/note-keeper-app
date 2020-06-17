@@ -206,4 +206,9 @@ class _NoteDetailState extends State<NoteDetail> {
   void updateTitle() {
     note.title = titleController.text;
   }
+
+  // Update the description of Note object
+  void updateDescription() {
+    note.description = descriptionController.text;
+  }
 }
