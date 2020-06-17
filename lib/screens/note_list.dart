@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:note_keeper_app/models/note.dart';
 import 'package:note_keeper_app/screens/note_detail.dart';
+import 'package:note_keeper_app/utils/database_helper.dart';
 
 class NoteList extends StatefulWidget {
   @override
@@ -9,8 +11,9 @@ class NoteList extends StatefulWidget {
 }
 
 class _NoteListState extends State<NoteList> {
-  final double _minimumPadding = 5.0;
-  List<int> dummyNumbers = List<int>.generate(100, (index) => index++);
+  DatabaseHelper databaseHelper = DatabaseHelper();
+  List<Note> noteList;
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
