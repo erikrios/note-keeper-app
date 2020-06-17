@@ -93,4 +93,18 @@ class _NoteListState extends State<NoteList> {
         return Colors.yellow;
     }
   }
+
+  // Returns the priority icon
+  Icon getPriorityIcon(int priority) {
+    switch (priority) {
+      case 1:
+        return Icon(Icons.play_arrow);
+        break;
+      case 2:
+        return Icon(Icons.keyboard_arrow_right);
+        break;
+      default:
+        return Icon(Icons.keyboard_arrow_right);
+    }
+  }
 }
