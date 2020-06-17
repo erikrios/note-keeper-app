@@ -235,7 +235,7 @@ class _NoteDetailState extends State<NoteDetail> {
       _showAlertDialog('Status', 'Note Saved Successfully');
     } else {
       // Failure
-      _showAlertDialog('Status', 'Note Saved Successfully');
+      _showAlertDialog('Status', 'Problem Saving Note');
     }
   }
 
