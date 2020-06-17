@@ -187,4 +187,18 @@ class _NoteDetailState extends State<NoteDetail> {
         break;
     }
   }
+
+  // Convert int priority to String priority and display it to user in DropDown
+  String getPriorityAsString(int value) {
+    String priority;
+    switch (value) {
+      case 1:
+        priority = _priorities[0]; // 'High'
+        break;
+      case 2:
+        priority = _priorities[1]; // 'Low'
+        break;
+    }
+    return priority;
+  }
 }
