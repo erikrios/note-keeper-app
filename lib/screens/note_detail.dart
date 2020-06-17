@@ -175,4 +175,16 @@ class _NoteDetailState extends State<NoteDetail> {
   void _navigateToList() {
     Navigator.pop(context);
   }
+
+  // Convert the String priority in the form of integer before saving it to Database
+  void updatePriorityAsInt(String value) {
+    switch (value) {
+      case 'High':
+        note.priority = 1;
+        break;
+      case 'Low':
+        note.priority = 2;
+        break;
+    }
+  }
 }
