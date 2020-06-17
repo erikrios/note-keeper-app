@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:note_keeper_app/models/note.dart';
 
 class NoteDetail extends StatefulWidget {
   final String _appBarTitle;
+  final Note note;
 
-  NoteDetail(this._appBarTitle);
+  NoteDetail(this.note, this._appBarTitle);
 
   @override
   State<StatefulWidget> createState() {
-    return _NoteDetailState(_appBarTitle);
+    return _NoteDetailState(note, _appBarTitle);
   }
 }
 
 class _NoteDetailState extends State<NoteDetail> {
   final String _appBarTitle;
+  final Note note;
 
-  _NoteDetailState(this._appBarTitle);
+  _NoteDetailState(this.note, this._appBarTitle);
 
   final double _minimumPadding = 5.0;
   static final List<String> _priorities = [
