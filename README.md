@@ -1,5 +1,4 @@
-# note_keeper_app
-
+# Note Keeper App
 A new Flutter project.
 
 ## Getting Started
